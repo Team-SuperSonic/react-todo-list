@@ -1,10 +1,23 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const TodoField = () => {
+const TodoField = ({ todoField, setTodoField, onCreateTodo }) => {
   return (
     <StyledInputBlock>
-      <input type="text" />
+      <input
+        onKeyUp={(e) => {
+          if (e.key === "Enter") {
+            onCreateTodo();
+          }
+        }}
+        placeholder="할일을 입력 후 ENTER를 눌러주세요."
+        value={todoField}
+        type="text"
+        onChange={(e) => {
+          const { value, name } = e.target;
+          setTodoField(value);
+        }}
+      />
     </StyledInputBlock>
   );
 };

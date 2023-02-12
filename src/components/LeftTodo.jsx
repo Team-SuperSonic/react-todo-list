@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const LeftTodo = () => {
+const LeftTodo = ({ todoCount }) => {
   return (
     <StyledLeftTodo
       style={{
-        color: '#45cb9d',
+        color: "#45cb9d",
         fontWeight: 700,
-        fontSize: '16px',
+        fontSize: "16px",
       }}
     >
-      할 일 N개 남음
+      할 일 {todoCount}개 남음
     </StyledLeftTodo>
   );
 };
